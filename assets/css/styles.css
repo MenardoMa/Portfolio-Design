@@ -303,16 +303,24 @@ h3 {
 .items__container .social {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 100%;
   /* background-color: red; */
   padding-block: 0.5rem;
+  margin-top: 0.6rem;
 }
 
 .social .link__social {
   height: 24px;
   width: 24px;
   overflow: hidden;
+  transform: scale(1);
+  transition: transform var(--duration);
+}
+
+.social .link__social:hover {
+  transform: scale(0.9);
+  transition: transform var(--duration);
 }
 
 .link__social img {
@@ -934,6 +942,158 @@ h3 {
   border-bottom: 1px solid #88888a;
 }
 
+.content__blog a {
+  opacity: 1;
+  transition: opacity var(--duration);
+}
+.content__blog p:hover a {
+  opacity: 0.7;
+  transition: opacity var(--duration);
+}
+
+/*========================= SNIPPETS ========================*/
+
+#snippet {
+  position: relative;
+  /* border: 1px solid red; */
+  padding: var(--padding-top-separator) 0 3rem;
+  background-color: var(--color-hero);
+}
+
+.snippet__title {
+  position: relative;
+}
+
+.snippet__title .title__snippet {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  text-transform: uppercase;
+}
+
+.snippet__title .title__snippet::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-secondary);
+}
+
+.header__snippet {
+  position: relative;
+  /* border: 1px solid red; */
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.header__snippet .desc__snippet {
+  font-size: clamp(1.3rem, 2cqi, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+
+.snippets__grid {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+  /* border: 1px solid red; */
+}
+
+.snippet__items {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--color-btn-primary);
+}
+
+.snippet__items .img__snipper {
+  overflow: hidden;
+  width: 100%;
+  height: 150px;
+}
+
+.img__snipper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  cursor: pointer;
+  transition: transform var(--duration);
+}
+
+.img__snipper:hover img {
+  transform: scale(1.1);
+  transition: transform var(--duration);
+}
+
+.container__items {
+  padding: 1.2rem 1.2rem 2rem;
+}
+
+.container__items .title__items {
+  font-size: clamp(0.9rem, 1cqi, 1rem);
+  font-weight: 450;
+}
+
+.container__items .desc__items {
+  line-height: 1.5;
+}
+
+.container__items .btn {
+  font-size: clamp(0.9rem, 1cqi, 0.8rem);
+}
+
+.content__snippet .col:nth-child(2) {
+  /* border: 1px solid red; */
+  border-top: 1px solid rgb(136, 136, 138);
+  padding: 2rem 0;
+  margin-top: var(--padding-top-separator);
+}
+
+.follow {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  /* background-color: blue; */
+}
+
+.follow .title__follow {
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: clamp(0.9rem, 1cqi, 1rem);
+}
+
+.follow .title__follow {
+  margin-bottom: 0;
+}
+
+.list__follow {
+  display: flex;
+  gap: 1rem;
+}
+
+.list__follow .link__follow {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+  transition: transform var(--duration);
+}
+
+.list__follow .link__follow:hover {
+  transform: scale(0.9);
+  transition: transform var(--duration);
+}
+
 /*========================= UTILITY ========================*/
 
 .container {
@@ -972,6 +1132,16 @@ section {
   height: 2px;
   width: 100%;
   background-color: var(--color-white);
+}
+
+.btn-secondary .fa {
+  transform: translateX(0);
+  transition: transform var(--duration);
+}
+
+.btn-secondary:hover .fa {
+  transform: translateX(3px);
+  transition: transform var(--duration);
 }
 
 .btn-tags {
@@ -1038,7 +1208,7 @@ section {
     gap: 0;
   }
 
-  /*========================== WORK ==========================*/
+  /*======================= WORK =================*/
 
   .container .content__work__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1052,7 +1222,7 @@ section {
     justify-content: flex-end;
   }
 
-  /*===================== TESTIMONIAL ========================*/
+  /*================ TESTIMONIAL ===================*/
 
   .header__testi {
     display: flex;
@@ -1081,7 +1251,7 @@ section {
     height: max-content;
   }
 
-  /*====================== BLOG & ARTICLE =====================*/
+  /*================ BLOG & ARTICLE ================*/
 
   #blog {
     padding: var(--padding-top-separator) 0 3rem;
@@ -1098,6 +1268,26 @@ section {
 
   .content__card:nth-child(2) .article {
     padding-top: 0;
+  }
+
+  /*========================= SNIPPETS ========================*/
+
+  .header__snippet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__snippet .desc__snippet {
+    max-width: 400px;
+  }
+
+  .snippets__grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  }
+
+  .follow {
+    flex-direction: row;
   }
 }
 
