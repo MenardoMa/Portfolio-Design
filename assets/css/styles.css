@@ -309,6 +309,19 @@ h3 {
   padding-block: 0.5rem;
 }
 
+.social .link__social {
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+}
+
+.link__social img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
 /*========================== ABOUT =========================*/
 #about {
   position: relative;
@@ -416,6 +429,19 @@ h3 {
   flex: 1;
   gap: 1rem;
   justify-content: space-between;
+}
+
+.list__logo li {
+  height: 35px;
+  width: 35px;
+  overflow: hidden;
+}
+
+.list__logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: center;
+  object-position: center;
 }
 
 /*========================== SKILLS ========================*/
